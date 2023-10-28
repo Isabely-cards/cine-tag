@@ -2,6 +2,7 @@ import Titulo from "../../components/Titulo"
 import Banner from "../../components/Banner"
 import Card from "../../components/Card"
 import { useFavoritoContext } from '../../contextos/Favoritos';
+import styles from './styles.module.css'
 
 function Favoritos() {
     const {favorito} = useFavoritoContext();
