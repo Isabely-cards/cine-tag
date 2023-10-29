@@ -10,7 +10,8 @@
 .capa {
     width: 100%;
 }
-.container h2, .favoritar {
+.container h2, 
+.favoritar {
     padding: 0 1em;
 }
 
