@@ -2,9 +2,18 @@ import styles from './styles.module.css'
 import Banner from '../../components/Banner'
 import Titulo from '../../components/Titulo'
 import Card from '../../components/Card'
-import videos from '../../json/db.json'
+import { useEffect, useState } from 'react'
 
 function Inicio () {
+    const [videos , setvideos] = useState([])
+
+    useEffect(() => {
+        fetch("https://my-json-server.typicode.com/isabely-cards/cinetag-api/videos")
+        .then(resposta => resposta.json())
+        .then(dados => {
+            setvideos(dados)
+        })
+    }, [])
 
     return(
         <>
@@ -13,8 +22,8 @@ function Inicio () {
             <h1>Um lugar para guardar seus vídeos e filmes!</h1>
         </Titulo>
         <section className={styles.container}>
-            {videos.map((video) => {
-                return <Card {...video} key={video.id}/>
+            {videos.map((videos) => {
+                return <Card {...videos} key={videos.id}/>
             })}
         </section>
         </>
